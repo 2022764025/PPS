@@ -1,0 +1,20 @@
+#Exercise 2
+
+import random
+
+class Character:
+    def __init__(self, name, life):
+        self.name = name
+        self.life = life
+    def damage(self):
+        self.life -= 1
+        print(f"{self.name}가 공격받음! 생명력:{self.life}")
+
+champ1 = Character("신지드", 1000)
+champ2 = Character("징크스", 600)
+champ3 = Character("크산테", 900)
+characters = [champ1, champ2, champ3]   
+
+for i in range(10):
+    target = random.choice(characters)
+    target.damage()
