@@ -1,0 +1,11 @@
+#예금 이자 계산기
+
+#p' = p * (1+r)^n
+# p' = 원리금, p: 거치금액, r=연간이율, n=거치 연수
+
+def interest_year(p,r,n):
+    return p * pow((1+r),n)
+
+p,r,n = list(map(float, input().split()))
+result = interest_year(p,r,n)
+print(f"원금: {p}, 이자: {result - p}")
