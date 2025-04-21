@@ -1,0 +1,8 @@
+import pandas as pd
+
+url = "https://weather.naver.com/today/09140104"
+
+tables = pd.read_html(url)
+
+for i, table in enumerate(tables):
+    print(f"테이블 {i}:\n", table.head(), "\n")
