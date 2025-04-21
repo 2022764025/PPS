@@ -1,0 +1,11 @@
+import pandas as pd
+import requests
+
+url = 'https://finance.naver.com/sise/'
+response = requests.get(url)
+response.encoding = response.apparent_encoding  # 자동 인코딩 감지
+
+tables = pd.read_html(response.text)
+
+for i, table in enumerate(tables):
+    print(f"테이블 {i}:\n", table.head(), "\n")
