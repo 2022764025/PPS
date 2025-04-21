@@ -1,0 +1,6 @@
+import pandas as pd
+
+url = 'https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population'
+tables = pd.read_html(url)   # 모든 테이블 가져오기
+df = tables[0]               # 첫 번째 테이블 사용
+print(df.head(10))          # 상위 10개 출력
